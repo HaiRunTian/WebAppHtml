@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/leaflet/1.6.0/leaflet.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/leaflet/1.6.0/leaflet.js"></script>
+    <style>
+            #map{
+                position:absolute;
+                width:100vw;
+                height:100vh;
+            }
+
+    </style>
+</head>
+<body>
+<div id='map'>
+
+</div>
+<script>
+            var map = L.map('map',{
+                crs:L.CRS.EPSG4326,
+                attributionControl:false,
+                zoomControl:false
+            }).setView([23.179039,114.296359], 13).fitWorld();
+
+            L.tileLayer(
+            "https://t0.tianditu.gov.cn/vec_c/wmts?layer=vec&style=default&tilematrixset=c&Service=WMTS&Request=GetTile&Version=1.0.0&Format=tiles&TileMatrix={z}&TileCol={x}&TileRow={y}&tk=0b018552994f71a9467d24461a8f8238", {
+                maxZoom: 20,
+                tileSize: 256,
+                zoomOffset: 1,
+            }
+        ).addTo(map);
+
+
+     L.tileLayer.wms("http://47.119.117.39:8091/geoserver/Boluo/wms", {
+                layers: 'Boluo:Boluo_2DMap',
+                format: 'image/png',
+                transparent: true,
+                 maxZoom: 20,
+                 tileSize: 256,
+                // srs: 'EPSG:4326',
+                attribution: "Weather data © 2012 IEM Nexrad"
+            }).addTo(map);
+
+            L.tileLayer.wms("http://47.119.117.39:8091/geoserver/Boluo/wms", {
+                layers: 'Boluo:state_of_desilting',
+                format: 'image/png',
+                transparent: true,
+                // srs: 'EPSG:4326',
+                 maxZoom: 20,
+                 tileSize: 256,
+                attribution: "Weather data © 2012 IEM Nexrad"
+            }).addTo(map);
+
+               L.tileLayer.wms("http://47.119.117.39:8091/geoserver/Boluo/wms", {
+                layers: 'Boluo:ps_qy_point_zy',
+                format: 'image/png',
+                transparent: true,
+                // srs: 'EPSG:4326',
+                 maxZoom: 20,
+                 tileSize: 256,
+                attribution: "Weather data © 2012 IEM Nexrad"
+            }).addTo(map);
+
+               L.tileLayer.wms("http://47.119.117.39:8091/geoserver/ChaoYangQu/wms", {
+                layers: 'ChaoYangQu:ps_sewagefarm_zy',
+                format: 'image/png',
+                transparent: true,
+                // srs: 'EPSG:4326',
+                attribution: "Weather data © 2012 IEM Nexrad"
+            }).addTo(map);
+
+             L.tileLayer.wms("http://47.119.117.39:8091/geoserver/ChaoYangQu/wms", {
+                layers: 'ChaoYangQu:ps_pumping_station_zy',
+                format: 'image/png',
+                transparent: true,
+                // srs: 'EPSG:4326',
+                attribution: "Weather data © 2012 IEM Nexrad"
+            }).addTo(map);
+
+             L.tileLayer.wms("http://47.119.117.39:8091/geoserver/ChaoYangQu/wms", {
+                layers: 'ChaoYangQu:ps_pm_zy',
+                format: 'image/png',
+                transparent: true,
+                // srs: 'EPSG:4326',
+                attribution: "Weather data © 2012 IEM Nexrad"
+            }).addTo(map);
+
+             L.tileLayer.wms("http://47.119.117.39:8091/geoserver/ChaoYangQu/wms", {
+                layers: 'ChaoYangQu:ps_draingate_zy',
+                format: 'image/png',
+                transparent: true,
+                // srs: 'EPSG:4326',
+                attribution: "Weather data © 2012 IEM Nexrad"
+            }).addTo(map);
+
+              L.tileLayer.wms("http://47.119.117.39:8091/geoserver/ChaoYangQu/wms", {
+                layers: 'ChaoYangQu:ps_spout_zy',
+                format: 'image/png',
+                transparent: true,
+                // srs: 'EPSG:4326',
+                attribution: "Weather data © 2012 IEM Nexrad"
+            }).addTo(map);
+
+             L.tileLayer.wms("http://47.119.117.39:8091/geoserver/ChaoYangQu/wms", {
+                layers: 'ChaoYangQu:ps_well_zy_CHENSHA',
+                format: 'image/png',
+                transparent: true,
+                // srs: 'EPSG:4326',
+                attribution: "Weather data © 2012 IEM Nexrad"
+            }).addTo(map);
+
+              L.tileLayer.wms("http://47.119.117.39:8091/geoserver/ChaoYangQu/wms", {
+                layers: 'ChaoYangQu:ps_valve_zy',
+                format: 'image/png',
+                transparent: true,
+                // srs: 'EPSG:4326',
+                attribution: "Weather data © 2012 IEM Nexrad"
+            }).addTo(map);
+
+             L.tileLayer.wms("http://47.119.117.39:8091/geoserver/ChaoYangQu/wms", {
+                layers: 'ChaoYangQu:ps_comb_zy',
+                format: 'image/png',
+                transparent: true,
+                // srs: 'EPSG:4326',
+                attribution: "Weather data © 2012 IEM Nexrad"
+            }).addTo(map);
+
+             L.tileLayer.wms("http://47.119.117.39:8091/geoserver/ChaoYangQu/wms", {
+                layers: 'ChaoYangQu:ps_dir_point_zy',
+                format: 'image/png',
+                transparent: true,
+                // srs: 'EPSG:4326',
+                attribution: "Weather data © 2012 IEM Nexrad"
+            }).addTo(map);
+
+             L.tileLayer.wms("http://47.119.117.39:8091/geoserver/ChaoYangQu/wms", {
+                layers: 'ChaoYangQu:ps_well_zy_JIANCHA',
+                format: 'image/png',
+                transparent: true,
+                // srs: 'EPSG:4326',
+                attribution: "Weather data © 2012 IEM Nexrad"
+            }).addTo(map);
+
+               L.tileLayer.wms("http://47.119.117.39:8091/geoserver/ChaoYangQu/wms", {
+                layers: 'ChaoYangQu:ps_well_zy_DIESHUI',
+                format: 'image/png',
+                transparent: true,
+                // srs: 'EPSG:4326',
+                attribution: "Weather data © 2012 IEM Nexrad"
+            }).addTo(map);
+
+</script>
+</body>
+</html>
